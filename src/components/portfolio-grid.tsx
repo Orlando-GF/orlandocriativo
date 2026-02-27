@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projects, ProjectCategory, type Project } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -112,6 +113,15 @@ function ProjectCard({ project }: { project: Project }) {
                     </motion.div>
 
                     <div className="relative z-20 mt-auto">
+                        <div className="flex justify-between items-start mb-8">
+                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)] ${styles?.tag || 'border-foreground bg-background'}`}>
+                                {project.category}
+                            </span>
+                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground'}`}>
+                                <ArrowRight className="w-6 h-6" />
+                            </div>
+                        </div>
+
                         <span className={`text-xs font-bold uppercase tracking-[0.4em] mb-4 block ${styles?.metadata || 'opacity-80'}`}>Projeto Selecionado</span>
                         <h3 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter italic transition-transform duration-300 group-hover:translate-x-4">
                             {project.title.split(' ').map((word: string, i: number) => (
