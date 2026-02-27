@@ -117,7 +117,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em]">
                             {project.category} // {(index + 1).toString().padStart(2, '0')}
                         </span>
-                        <div className="w-14 h-14 border-4 border-foreground bg-background text-foreground flex items-center justify-center transition-all duration-300 hover:rotate-45 hover:bg-primary hover:border-primary hover:text-primary-foreground cursor-pointer">
+                        <div className="w-14 h-14 border-4 border-foreground bg-background text-foreground flex items-center justify-center transition-all duration-300 hover:rotate-45 hover:bg-primary hover:!border-primary hover:text-primary-foreground cursor-pointer">
                             <ArrowRight className="w-6 h-6" strokeWidth={2.5} />
                         </div>
                     </div>
