@@ -128,30 +128,32 @@ function ProjectCard({ project }: { project: Project }) {
                         />
                     </motion.div>
 
-                    <div className="relative z-20 mt-auto">
-                        <div className="flex justify-between items-start mb-8">
-                            <span
-                                className="inline-block px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em]"
-                                style={{
-                                    border: '2px solid black',
-                                    backgroundColor: 'white',
-                                    color: 'black',
-                                    boxShadow: '4px 4px 0px 0px rgba(0,0,0,1)'
-                                }}
-                            >
-                                {project.category}
-                            </span>
-                            <div
-                                className="w-12 h-12 flex items-center justify-center transition-all duration-500 group-hover:rotate-45"
-                                style={{
-                                    border: '2px solid black',
-                                    backgroundColor: 'white',
-                                    color: 'black'
-                                }}
-                            >
-                                {SVG_ARROW}
-                            </div>
+                    {/* Tag e Seta em Posicionamento Absoluto para evitar overflow */}
+                    <div className="absolute top-8 left-8 right-8 z-30 flex justify-between items-start pointer-events-none">
+                        <span
+                            className="inline-block px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] pointer-events-auto"
+                            style={{
+                                border: '2px solid black',
+                                backgroundColor: 'white',
+                                color: 'black',
+                                boxShadow: '4px 4px 0px 0px rgba(0,0,0,1)'
+                            }}
+                        >
+                            {project.category}
+                        </span>
+                        <div
+                            className="w-12 h-12 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 pointer-events-auto"
+                            style={{
+                                border: '2px solid black',
+                                backgroundColor: 'white',
+                                color: 'black'
+                            }}
+                        >
+                            {SVG_ARROW}
                         </div>
+                    </div>
+
+                    <div className="relative z-20 mt-auto">
 
                         <span className={`text-xs font-bold uppercase tracking-[0.4em] mb-4 block ${styles?.metadata || 'opacity-80'}`}>Projeto Selecionado</span>
                         <h3 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter italic transition-transform duration-300 group-hover:translate-x-4">
