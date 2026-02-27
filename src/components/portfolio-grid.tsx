@@ -68,13 +68,13 @@ export default function PortfolioGrid() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 px-6 md:px-12">
                     <motion.div style={{ y: y1 }} className="flex flex-col gap-12 md:gap-20 mt-0 md:mt-40">
                         {filteredProjects.filter((_, i) => i % 2 === 0).map((project) => (
-                            <ProjectCard key={project.slug} project={project} />
+                            <ProjectCard key={project.slug} project={project} index={projects.indexOf(project)} />
                         ))}
                     </motion.div>
 
                     <motion.div style={{ y: y2 }} className="flex flex-col gap-12 md:gap-20">
                         {filteredProjects.filter((_, i) => i % 2 !== 0).map((project) => (
-                            <ProjectCard key={project.slug} project={project} />
+                            <ProjectCard key={project.slug} project={project} index={projects.indexOf(project)} />
                         ))}
                     </motion.div>
                 </div>
@@ -83,7 +83,7 @@ export default function PortfolioGrid() {
     );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
     const styles = project.customStyles;
 
     return (
@@ -114,8 +114,8 @@ function ProjectCard({ project }: { project: Project }) {
 
                     <div className="relative z-20 mt-auto">
                         <div className="flex justify-between items-start mb-8">
-                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)] ${styles?.tag || 'border-foreground bg-background'}`}>
-                                {project.category}
+                            <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)]">
+                                {project.category} // {(index + 1).toString().padStart(2, '0')}
                             </span>
                             <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground'}`}>
                                 <ArrowRight className="w-6 h-6" />
