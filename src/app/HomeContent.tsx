@@ -166,7 +166,7 @@ export default function HomeContent() {
                                             rel="noopener noreferrer"
                                             whileHover={{ y: -4, x: -4 }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                            className="relative inline-flex h-16 items-center justify-center border-4 border-foreground bg-background px-12 text-xl font-black uppercase text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                                            className="relative inline-flex h-16 items-center justify-center border-4 border-foreground bg-foreground px-12 text-xl font-black uppercase text-background hover:bg-background hover:text-foreground transition-colors"
                                         >
                                             WhatsApp
                                         </motion.a>
