@@ -25,22 +25,6 @@ const watermarkVariants = {
     }
 } as const;
 
-const SVG_ARROW = (
-    <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-    >
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-    </svg>
-);
-
 export default function PortfolioGrid() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [activeCategory, setActiveCategory] = useState<ProjectCategory | "TODOS">("TODOS");
@@ -128,32 +112,15 @@ function ProjectCard({ project }: { project: Project }) {
                         />
                     </motion.div>
 
-                    {/* Tag e Seta em Posicionamento Absoluto para evitar overflow */}
-                    <div className="absolute top-8 left-8 right-8 z-30 flex justify-between items-start pointer-events-none">
-                        <span
-                            className="inline-block px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] pointer-events-auto"
-                            style={{
-                                border: '2px solid black',
-                                backgroundColor: 'white',
-                                color: 'black',
-                                boxShadow: '4px 4px 0px 0px rgba(0,0,0,1)'
-                            }}
-                        >
-                            {project.category}
-                        </span>
-                        <div
-                            className="w-12 h-12 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 pointer-events-auto"
-                            style={{
-                                border: '2px solid black',
-                                backgroundColor: 'white',
-                                color: 'black'
-                            }}
-                        >
-                            {SVG_ARROW}
-                        </div>
-                    </div>
-
                     <div className="relative z-20 mt-auto">
+                        <div className="flex justify-between items-start mb-8">
+                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] ${styles?.tag || 'border-foreground bg-background text-foreground'}`}>
+                                {project.category}
+                            </span>
+                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground text-foreground'}`}>
+                                <ArrowRight size={24} strokeWidth={2.5} />
+                            </div>
+                        </div>
 
                         <span className={`text-xs font-bold uppercase tracking-[0.4em] mb-4 block ${styles?.metadata || 'opacity-80'}`}>Projeto Selecionado</span>
                         <h3 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter italic transition-transform duration-300 group-hover:translate-x-4">
