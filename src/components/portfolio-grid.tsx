@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
                     <motion.div
                         variants={watermarkVariants}
-                        className="absolute -right-4 -bottom-4 z-10 w-64 h-64 md:w-80 md:h-80 pointer-events-none opacity-0 group-hover:opacity-30 group-hover:grayscale transition-all duration-500"
+                        className="absolute -right-4 -bottom-4 z-10 w-64 h-64 md:w-80 md:h-80 pointer-events-none opacity-25 group-hover:opacity-30 group-hover:grayscale transition-all duration-500"
                     >
                         <Image
                             src={project.icon}
