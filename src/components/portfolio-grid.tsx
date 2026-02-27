@@ -113,13 +113,11 @@ function ProjectCard({ project }: { project: Project }) {
                     </motion.div>
 
                     <div className="relative z-20 mt-auto">
-                        <div className="flex justify-between items-start mb-8">
-                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${styles?.tag || 'border-foreground bg-background text-foreground'}`}>
-                                {project.category}
-                            </span>
-                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground text-foreground'}`}>
-                                <ArrowRight className="w-6 h-6 stroke-[3px]" />
-                            </div>
+                        <span className="inline-block border-2 border-foreground bg-white text-black px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                            {project.category}
+                        </span>
+                        <div className="w-12 h-12 border-2 border-foreground flex items-center justify-center transition-all duration-500 group-hover:rotate-45 bg-white text-black">
+                            <ArrowRight size={24} strokeWidth={3} />
                         </div>
 
                         <span className={`text-xs font-bold uppercase tracking-[0.4em] mb-4 block ${styles?.metadata || 'opacity-80'}`}>Projeto Selecionado</span>
