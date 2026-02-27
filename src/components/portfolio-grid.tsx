@@ -114,11 +114,11 @@ function ProjectCard({ project }: { project: Project }) {
 
                     <div className="relative z-20 mt-auto">
                         <div className="flex justify-between items-start mb-8">
-                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)] ${styles?.tag || 'border-foreground bg-background'}`}>
+                            <span className={`inline-block border-2 px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${styles?.tag || 'border-foreground bg-background text-foreground'}`}>
                                 {project.category}
                             </span>
-                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground'}`}>
-                                <ArrowRight className="w-6 h-6" />
+                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground text-foreground'}`}>
+                                <ArrowRight className="w-6 h-6 stroke-[3px]" />
                             </div>
                         </div>
 
