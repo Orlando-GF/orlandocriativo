@@ -114,7 +114,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
                     {/* Tag e Seta — topo do card */}
                     <div className="relative z-20 flex justify-between items-start">
-                        <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[6px_6px_0px_0px_oklch(0_0_0)]">
+                        <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em]">
                             {project.category} // {(index + 1).toString().padStart(2, '0')}
                         </span>
                         <div className="w-14 h-14 border-4 border-foreground bg-background flex items-center justify-center transition-transform duration-300 hover:rotate-45 cursor-pointer">
