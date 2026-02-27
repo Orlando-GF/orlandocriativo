@@ -97,7 +97,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     whileHover="hover"
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                    {/* Background layer não é mais necessário, cor definida no container */}
 
                     <motion.div
                         variants={watermarkVariants}
@@ -115,7 +114,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     {/* Tag e Seta — topo do card */}
                     <div className="relative z-20 flex justify-between items-start">
                         <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em]">
-                            {project.category} // {(index + 1).toString().padStart(2, '0')}
+                            {project.category}{" // "}{(index + 1).toString().padStart(2, '0')}
                         </span>
                         <div className="w-14 h-14 border-4 border-foreground bg-background text-foreground flex items-center justify-center transition-all duration-300 hover:rotate-45 hover:bg-primary hover:!border-primary hover:text-primary-foreground cursor-pointer">
                             <ArrowRight className="w-6 h-6" strokeWidth={2.5} />
@@ -137,7 +136,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                             ))}
                         </h3>
 
-                        <div className={`mt-8 flex items-center gap-4 ${styles?.metadata ? styles.metadata.replace('text-', 'text-current opacity-40') : 'opacity-50'}`}>
+                        <div className={`mt-8 flex items-center gap-4 ${styles?.metadata || 'opacity-50'}`}>
                             <div className="h-[1px] flex-1 bg-current" />
                             <span className="text-[10px] font-mono tracking-widest leading-none">P.MAX_VER_3.0</span>
                         </div>

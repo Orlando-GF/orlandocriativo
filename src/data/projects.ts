@@ -29,10 +29,8 @@ export interface Project {
     icon: string;
     caseStudy?: CaseStudy;
     customStyles?: {
-        tag?: string;      // Classes para o tag de categoria
-        arrow?: string;    // Classes para o botão de seta
-        metadata?: string; // Classes para textos auxiliares (footer)
-        watermark?: string;// Filtros CSS para a imagem do ícone
+        metadata?: string; // Classes para textos auxiliares
+        watermark?: string; // Filtros CSS para a imagem do ícone
     };
 }
 
@@ -47,8 +45,6 @@ export const projects: Project[] = [
 
         icon: "/img/tabacariaskybox/icone_skybox.webp",
         customStyles: {
-            tag: "border-white bg-white text-black",
-            arrow: "border-white text-white group-hover:bg-[#a6fe00] group-hover:text-black group-hover:border-[#a6fe00]",
             metadata: "opacity-80",
             watermark: "brightness-125"
         },
@@ -80,8 +76,6 @@ export const projects: Project[] = [
         accentColor: "#0029ff",
         icon: "/img/andregomezimoveis/icone_andre.png",
         customStyles: {
-            tag: "border-white bg-white text-[#0029ff]",
-            arrow: "border-white text-white group-hover:bg-white group-hover:text-[#0029ff] group-hover:border-white",
             metadata: "opacity-60"
         },
         caseStudy: {
@@ -112,8 +106,6 @@ export const projects: Project[] = [
         accentColor: "#bf0000",
         icon: "/img/moedadeouro/icone_moedadeouro.svg",
         customStyles: {
-            tag: "border-white bg-white text-[#bf0000]",
-            arrow: "border-white text-white group-hover:bg-white group-hover:text-[#bf0000] group-hover:border-white",
             metadata: "opacity-60"
         },
         caseStudy: {
@@ -144,8 +136,6 @@ export const projects: Project[] = [
         accentColor: "#ff5500",
         icon: "/img/amefit/icone_amefit.webp",
         customStyles: {
-            tag: "border-white bg-white text-[#ff5500]",
-            arrow: "border-white text-white group-hover:bg-white group-hover:text-[#ff5500] group-hover:border-white",
             metadata: "opacity-60"
         },
         caseStudy: {
@@ -176,8 +166,6 @@ export const projects: Project[] = [
         accentColor: "#3f72af",
         icon: "/img/mikaelegilbraz/icone.webp",
         customStyles: {
-            tag: "border-white bg-white text-[#0a0a0a]",
-            arrow: "border-white text-white group-hover:bg-white group-hover:text-[#3f72af] group-hover:border-white",
             metadata: "opacity-60"
         },
         caseStudy: {
