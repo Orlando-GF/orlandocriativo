@@ -112,16 +112,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         />
                     </motion.div>
 
-                    <div className="relative z-20 mt-auto">
-                        <div className="flex justify-between items-start mb-8">
-                            <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)]">
-                                {project.category} // {(index + 1).toString().padStart(2, '0')}
-                            </span>
-                            <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground'}`}>
-                                <ArrowRight className="w-6 h-6" />
-                            </div>
+                    {/* Tag e Seta — topo do card */}
+                    <div className="relative z-20 flex justify-between items-start">
+                        <span className="inline-block border-2 border-foreground bg-foreground text-background px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_oklch(0_0_0)]">
+                            {project.category} // {(index + 1).toString().padStart(2, '0')}
+                        </span>
+                        <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-500 group-hover:rotate-45 ${styles?.arrow || 'border-foreground'}`}>
+                            <ArrowRight className="w-6 h-6" />
                         </div>
+                    </div>
 
+                    {/* Título e rodapé — fundo do card */}
+                    <div className="relative z-20 mt-auto">
                         <span className={`text-xs font-bold uppercase tracking-[0.4em] mb-4 block ${styles?.metadata || 'opacity-80'}`}>Projeto Selecionado</span>
                         <h3 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter italic transition-transform duration-300 group-hover:translate-x-4">
                             {project.title.split(' ').map((word: string, i: number) => (
