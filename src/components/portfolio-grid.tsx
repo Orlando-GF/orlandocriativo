@@ -92,7 +92,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
             <Link href={`/projeto/${project.slug}`}>
                 <motion.div
-                    className="relative flex min-h-[400px] md:h-[500px] flex-col border-4 border-foreground p-8 md:p-12 transition-all duration-300 bg-background"
+                    className="relative flex min-h-[400px] md:h-[500px] flex-col overflow-hidden border-4 border-foreground p-8 md:p-12 transition-all duration-300 bg-background"
                     initial="initial"
                     whileHover="hover"
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
