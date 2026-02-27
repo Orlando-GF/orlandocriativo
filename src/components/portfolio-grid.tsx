@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projects, ProjectCategory, type Project } from "@/data/projects";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 

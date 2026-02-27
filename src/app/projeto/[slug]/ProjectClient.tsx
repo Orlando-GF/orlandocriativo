@@ -32,13 +32,13 @@ export default function ProjectClient({ project, projectIndex }: ProjectClientPr
                         Voltar
                     </Link>
                     <span className="text-sm font-mono opacity-80 uppercase tracking-widest hidden md:block">
-                        PROJ_ID // {project.slug.toUpperCase()}
+                        PROJ_ID {"//"} {project.slug.toUpperCase()}
                     </span>
                 </nav>
 
                 <header className="mb-20 lg:mb-32">
                     <div className="mb-12 inline-block border-2 border-foreground px-4 py-1 text-xs font-black uppercase tracking-[0.25em]">
-                        {project.category} // {(projectIndex + 1).toString().padStart(2, '0')}
+                        {project.category} {"//"} {(projectIndex + 1).toString().padStart(2, '0')}
                     </div>
                     <h1 className="text-[17vw] lg:text-[13vw] font-black uppercase italic leading-[0.75] tracking-tighter relative z-40 break-words mix-blend-difference text-white dark:mix-blend-normal hover:scale-[1.02] transition-transform duration-700">
                         {project.title.split(' ').map((word, i) => (
